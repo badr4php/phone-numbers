@@ -18,13 +18,13 @@ const App = () => {
   };
   const onCountryChange = (e) => {
     setFilters({ ...filters, country: e.target.value });
-    url = `http://localhost/jumia_practical_test/?${setQueryString({ ...filters, country: e.target.value })}`;
+    url = process.env.REACT_APP_SERVICE_URL + `?${setQueryString({ ...filters, country: e.target.value })}`;
     getdata();
   }
 
   const onStateChange = (e) => {
     setFilters({ ...filters, state: e.target.value });
-    url = `http://localhost/jumia_practical_test/?${setQueryString({ ...filters, state: e.target.value })}`;
+    url = process.env.REACT_APP_SERVICE_URL + `?${setQueryString({ ...filters, state: e.target.value })}`;
     getdata();
   }
   console.log(data);

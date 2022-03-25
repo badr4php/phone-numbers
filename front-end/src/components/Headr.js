@@ -18,8 +18,8 @@ const Headr = ({onCountryChange, onStateChange}) => (
         <Col>
             <Form.Select aria-label="Default select example" onChange={onStateChange} id="state">
             <option value=''>State</option>
-            <option value="ok">OK</option>
-            <option value="nok">NOK</option>
+            <option value="OK">OK</option>
+            <option value="NOK">NOK</option>
             </Form.Select>
         </Col>
   </Row>
