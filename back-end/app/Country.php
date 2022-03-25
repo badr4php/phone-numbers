@@ -19,8 +19,20 @@ class Country
         $parser = new Parser();
         $data = [];
         foreach($phoneNumbers as $number){
-            $data[] = $parser->parse($number);
+            $row = $parser->parse($number);
+            if($this->filterByState($row)){
+                $data[] = $row;
+            }
         }
         return json_encode($data);
+    }
+
+    private function filterByState($row){
+        $isTrue = true;
+        if(!empty($_GET['state']) && $_GET['state'] != $row['state']){
+            $isTrue =  false;
+        }
+        return $isTrue;
+
     }
 }

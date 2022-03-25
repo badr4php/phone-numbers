@@ -30,10 +30,6 @@ class Parser
         return $parsed;
     }
 
-    /*private function setCode($phone){
-
-    }*/
-
     private function country()
     {
         return $this->countries[$this->code]['country'];
