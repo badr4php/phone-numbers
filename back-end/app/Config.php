@@ -4,7 +4,7 @@ namespace App;
 
 class Config {
 
-    const PATH_TO_SQLITE_FILE = 'db/sample.db';
+    const PATH_TO_SQLITE_FILE = __DIR__.'/../db/sample.db';
 
     const Countries  = [
         "237" => [
