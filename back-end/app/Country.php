@@ -16,9 +16,10 @@ class Country
 
     public function listPhoneNumbers(){
         $phoneNumbers = $this->customers->getPhoneNumbers();
+        $parser = new Parser();
         $data = [];
         foreach($phoneNumbers as $number){
-            $data[] = (new Parser($number))->parse();
+            $data[] = $parser->parse($number);
         }
         return json_encode($data);
     }

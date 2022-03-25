@@ -9,15 +9,19 @@ class Parser
     private $countries;
     
 
-    public function __construct($phone)
+    public function __construct()
     {
-        $this->code = trim(explode(' ', $phone)[0], '()'); 
-        $this->phone = $phone; 
         $this->countries = Config::Countries;
     }
 
-    public function parse()
+    private function init($phone){
+        $this->code = trim(explode(' ', $phone)[0], '()'); 
+        $this->phone = $phone; 
+    }
+
+    public function parse($phone)
     {
+        $this->init($phone);
         $parsed['country'] = $this->country();
         $parsed['state'] = $this->state();
         $parsed['code'] = $this->code();
