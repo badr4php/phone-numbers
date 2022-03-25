@@ -5,5 +5,3 @@ export const countries = [
     {code: "(258)", name: "Mozambique"},
     {code: "(256)", name: "Uganda"},
 ];
-
-export const REACT_APP_SERVICE_URL = 'http://localhost/jumia_practical_test/';

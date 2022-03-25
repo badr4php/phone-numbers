@@ -5,13 +5,11 @@ import {Api} from "./services/Api";
 import Headr from "./components/Headr";
 import List from "./components/List";
 import {setQueryString} from "./helpers/helpers";
-import {REACT_APP_SERVICE_URL} from "./config/constants";
 import './App.css';
 
 
 const App = () => {
-  //To Do use env variable
-  let url = REACT_APP_SERVICE_URL;
+  let url = process.env.REACT_APP_SERVICE_URL;
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState({});
   const getdata = async () => {
